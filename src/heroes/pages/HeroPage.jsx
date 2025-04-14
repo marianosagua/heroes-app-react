@@ -4,10 +4,9 @@ import { getHeroById } from "../helpers";
 
 export const HeroPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const hero = useMemo(() => getHeroById(id), [id]);
-
-  const navigate = useNavigate();
 
   const onNavigateBack = () => {
     switch (hero.publisher) {
